@@ -285,7 +285,10 @@
             }
           }
         }
-        xhr('POST',this.url, this.headers, data, done, errorUpload, isBinary, this.credentials);
+        //xhr('POST',this.url, this.headers, data, done, errorUpload, isBinary, this.credentials);
+        window.axios.post(this.url, data)
+          .then(done)
+          .catch(errorUpload);
       },
     },
 
